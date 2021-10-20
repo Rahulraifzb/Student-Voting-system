@@ -32,3 +32,10 @@ class CandidateElectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Election
         fields = ["id","name","vote"]
+
+class CandidateElectionSerializer2(serializers.ModelSerializer):
+    poll = serializers.CharField(max_length=150)
+    candidate = serializers.CharField(max_length=150)
+    class Meta:
+        model = Election
+        fields = ["poll","user","candidate"]
